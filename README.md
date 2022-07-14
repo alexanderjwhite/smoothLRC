@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# smoothLRC <img src="./inst/logo/logo" align="right" />
+# smoothLRC <img src="./inst/logo/logo.png" align="right" />
 
 <!-- badges: start -->
 <!-- badges: end -->
