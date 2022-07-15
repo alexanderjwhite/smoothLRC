@@ -17,5 +17,3 @@ You can install the development version of smoothLRC from
 # install.packages("devtools")
 devtools::install_github("alexanderjwhite/smoothLRC")
 ```
-
-<meta name="google-site-verification" content="6BLK21Boyy-gYUdJrvEpht5T_HvknlN4RTq5wiCBkCY" />

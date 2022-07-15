@@ -11,6 +11,11 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
+
+fileConn <- file("myheader.html")
+writeLines('<meta name="google-site-verification" content="6BLK21Boyy-gYUdJrvEpht5T_HvknlN4RTq5wiCBkCY" />', fileConn)
+close(fileConn)
+
 ```
 
 # smoothLRC <img src="./inst/logo/logo.png" align="right" width="25%"/>
@@ -28,5 +33,3 @@ You can install the development version of smoothLRC from [GitHub](https://githu
 # install.packages("devtools")
 devtools::install_github("alexanderjwhite/smoothLRC")
 ```
-
-<meta name="google-site-verification" content="6BLK21Boyy-gYUdJrvEpht5T_HvknlN4RTq5wiCBkCY" />
