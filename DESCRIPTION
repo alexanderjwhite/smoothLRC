@@ -1,6 +1,6 @@
 Package: smoothLRC
 Title: What the Package Does (One Line, Title Case)
-Version: 1.0.0
+Version: 0.99.0
 Authors@R: c(
     person(given = "Alex", family = "White", role = c("aut", "cre"), email = "whitealj@iu.edu"),
     person(given = "Sha", family = "Cao", role = c("aut"), email = "shacao@iu.edu"))
@@ -20,6 +20,7 @@ Imports:
     SummarizedExperiment,
     Matrix,
     methods,
+    sparsesvd,
     FNN
 LinkingTo: 
     Rcpp,

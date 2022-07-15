@@ -2,30 +2,30 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 vecnorm_row <- function(x) {
-    .Call('_smoothLRC_vecnorm_row', PACKAGE = 'smoothLRC', x)
+    .Call(`_smoothLRC_vecnorm_row`, x)
 }
 
 vecnorm_diag <- function(x) {
-    .Call('_smoothLRC_vecnorm_diag', PACKAGE = 'smoothLRC', x)
+    .Call(`_smoothLRC_vecnorm_diag`, x)
 }
 
 uv_norm <- function(u, v) {
-    .Call('_smoothLRC_uv_norm', PACKAGE = 'smoothLRC', u, v)
+    .Call(`_smoothLRC_uv_norm`, u, v)
 }
 
 fct_c_opt_adam <- function(gradients, state) {
-    .Call('_smoothLRC_fct_c_opt_adam', PACKAGE = 'smoothLRC', gradients, state)
+    .Call(`_smoothLRC_fct_c_opt_adam`, gradients, state)
 }
 
 pdist <- function(x, w, index) {
-    .Call('_smoothLRC_pdist', PACKAGE = 'smoothLRC', x, w, index)
+    .Call(`_smoothLRC_pdist`, x, w, index)
 }
 
-fct_c_optimize <- function(x, u, v, w, index, lambda, cnorm, epsilon, maxiter) {
-    .Call('_smoothLRC_fct_c_optimize', PACKAGE = 'smoothLRC', x, u, v, w, index, lambda, cnorm, epsilon, maxiter)
+fct_c_optimize <- function(x, u, v, w, index, lambda, epsilon, maxiter) {
+    .Call(`_smoothLRC_fct_c_optimize`, x, u, v, w, index, lambda, epsilon, maxiter)
 }
 
 obs_log_like <- function(test_x, u, v, test_nn, index_map) {
-    .Call('_smoothLRC_obs_log_like', PACKAGE = 'smoothLRC', test_x, u, v, test_nn, index_map)
+    .Call(`_smoothLRC_obs_log_like`, test_x, u, v, test_nn, index_map)
 }
 
