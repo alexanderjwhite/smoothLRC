@@ -1,5 +1,6 @@
 ---
-output: github_document
+output:
+  github_document
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -11,10 +12,6 @@ knitr::opts_chunk$set(
   fig.path = "man/figures/README-",
   out.width = "100%"
 )
-
-fileConn <- file("myheader.html")
-writeLines('<meta name="google-site-verification" content="6BLK21Boyy-gYUdJrvEpht5T_HvknlN4RTq5wiCBkCY" />', fileConn)
-close(fileConn)
 
 ```
 
