@@ -11,65 +11,6 @@ Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
 Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
 #endif
 
-// vecnorm_row
-arma::rowvec vecnorm_row(arma::mat x);
-RcppExport SEXP _smoothLRC_vecnorm_row(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(vecnorm_row(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// vecnorm_diag
-arma::mat vecnorm_diag(arma::mat x);
-RcppExport SEXP _smoothLRC_vecnorm_diag(SEXP xSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
-    rcpp_result_gen = Rcpp::wrap(vecnorm_diag(x));
-    return rcpp_result_gen;
-END_RCPP
-}
-// uv_norm
-List uv_norm(arma::mat u, arma::mat v);
-RcppExport SEXP _smoothLRC_uv_norm(SEXP uSEXP, SEXP vSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::mat >::type u(uSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type v(vSEXP);
-    rcpp_result_gen = Rcpp::wrap(uv_norm(u, v));
-    return rcpp_result_gen;
-END_RCPP
-}
-// fct_c_opt_adam
-List fct_c_opt_adam(arma::mat gradients, List state);
-RcppExport SEXP _smoothLRC_fct_c_opt_adam(SEXP gradientsSEXP, SEXP stateSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::mat >::type gradients(gradientsSEXP);
-    Rcpp::traits::input_parameter< List >::type state(stateSEXP);
-    rcpp_result_gen = Rcpp::wrap(fct_c_opt_adam(gradients, state));
-    return rcpp_result_gen;
-END_RCPP
-}
-// pdist
-double pdist(arma::mat x, arma::sp_mat w, arma::mat index);
-RcppExport SEXP _smoothLRC_pdist(SEXP xSEXP, SEXP wSEXP, SEXP indexSEXP) {
-BEGIN_RCPP
-    Rcpp::RObject rcpp_result_gen;
-    Rcpp::RNGScope rcpp_rngScope_gen;
-    Rcpp::traits::input_parameter< arma::mat >::type x(xSEXP);
-    Rcpp::traits::input_parameter< arma::sp_mat >::type w(wSEXP);
-    Rcpp::traits::input_parameter< arma::mat >::type index(indexSEXP);
-    rcpp_result_gen = Rcpp::wrap(pdist(x, w, index));
-    return rcpp_result_gen;
-END_RCPP
-}
 // fct_c_optimize
 List fct_c_optimize(arma::sp_mat x, arma::mat u, arma::mat v, arma::sp_mat w, arma::mat index, double lambda, double epsilon, int maxiter);
 RcppExport SEXP _smoothLRC_fct_c_optimize(SEXP xSEXP, SEXP uSEXP, SEXP vSEXP, SEXP wSEXP, SEXP indexSEXP, SEXP lambdaSEXP, SEXP epsilonSEXP, SEXP maxiterSEXP) {
@@ -105,11 +46,6 @@ END_RCPP
 }
 
 static const R_CallMethodDef CallEntries[] = {
-    {"_smoothLRC_vecnorm_row", (DL_FUNC) &_smoothLRC_vecnorm_row, 1},
-    {"_smoothLRC_vecnorm_diag", (DL_FUNC) &_smoothLRC_vecnorm_diag, 1},
-    {"_smoothLRC_uv_norm", (DL_FUNC) &_smoothLRC_uv_norm, 2},
-    {"_smoothLRC_fct_c_opt_adam", (DL_FUNC) &_smoothLRC_fct_c_opt_adam, 2},
-    {"_smoothLRC_pdist", (DL_FUNC) &_smoothLRC_pdist, 3},
     {"_smoothLRC_fct_c_optimize", (DL_FUNC) &_smoothLRC_fct_c_optimize, 8},
     {"_smoothLRC_obs_log_like", (DL_FUNC) &_smoothLRC_obs_log_like, 5},
     {NULL, NULL, 0}

@@ -13,6 +13,15 @@
 #' @export
 #'
 #' @examples
+#'
+#' sce <- example_sce()
+#' lambda <- 5
+#' k <- 10
+#' n_clust <- 5
+#' epsilon <- 1e-3
+#' maxiter <- 5
+#' smooth_lrc(sce, lambda, k, n_clust, epsilon, maxiter)
+#'
 smooth_lrc <- function(input, lambda, k, n_clust, epsilon = 1e-3, maxiter = 1e3){
 
   # Get assay/coordinates from SummarizedExperiment object
@@ -25,14 +34,14 @@ smooth_lrc <- function(input, lambda, k, n_clust, epsilon = 1e-3, maxiter = 1e3)
 
   # Run the model
   print("Running smoothLRC...")
-  model <- smooth_model(init_model$x, init_model$u0, init_model$v0, init_model$w, init_model$index, lambda, k, epsilon, maxiter)
+  model <- smooth_model(x, init_model$u0, init_model$v0, init_model$w, init_model$index, lambda, epsilon, maxiter)
 
   # Cluster the right singular vectors
   print("Clustering right singular vectors...")
   clust <- smooth_clust(model$v, n_clust)
 
   # Attach components and return
-  colData(input)$smooth_cluster <- unname(clust)
+  input@colData$smooth_cluster <- unname(clust)
 
   input@metadata$smooth_u <- model$u
   input@metadata$smooth_v <- model$v

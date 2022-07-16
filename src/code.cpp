@@ -5,7 +5,7 @@
 using namespace Rcpp;
 using namespace arma;
 
-// [[Rcpp::export]]
+
 arma::rowvec vecnorm_row(arma::mat x){
   arma::rowvec norm_x(x.n_cols,fill::zeros);
   for (int i = 0; i < x.n_cols; i++){
@@ -14,7 +14,7 @@ arma::rowvec vecnorm_row(arma::mat x){
   return(norm_x);
 }
 
-// [[Rcpp::export]]
+
 arma::mat vecnorm_diag(arma::mat x){
   arma::mat norm_x = zeros<arma::mat>(x.n_cols,x.n_cols);
   for (int i = 0; i < x.n_cols; i++){
@@ -23,7 +23,7 @@ arma::mat vecnorm_diag(arma::mat x){
   return(norm_x);
 }
 
-// [[Rcpp::export]]
+
 List uv_norm(arma::mat u,
              arma::mat v){
 
@@ -44,7 +44,7 @@ List uv_norm(arma::mat u,
 }
 
 
-// [[Rcpp::export]]
+
 List fct_c_opt_adam(arma::mat gradients,
                     List state){
   if (state.size() == 0){
@@ -79,7 +79,7 @@ List fct_c_opt_adam(arma::mat gradients,
   return(state);
 }
 
-// [[Rcpp::export]]
+
 double pdist(arma::mat x, arma::sp_mat w, arma::mat index){
   double result = 0;
   arma::mat diff;
@@ -209,10 +209,10 @@ List fct_c_optimize(arma::sp_mat x,
 
 // [[Rcpp::export]]
 arma::rowvec obs_log_like(arma::sp_mat test_x,
-                    arma::mat u,
-                    arma::mat v,
-                    arma::mat test_nn,
-                    arma::mat index_map){
+                          arma::mat u,
+                          arma::mat v,
+                          arma::mat test_nn,
+                          arma::mat index_map){
   arma::rowvec cv_log_like(test_nn.n_rows, fill::zeros);
   double cv_log_like_i;
   double param_index;
@@ -237,5 +237,4 @@ arma::rowvec obs_log_like(arma::sp_mat test_x,
   }
   return(cv_log_like);
 }
-
 

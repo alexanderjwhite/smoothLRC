@@ -1,5 +1,5 @@
 ## usethis namespace: start
-#' @useDynLib spatialr.dev, .registration = TRUE
+#' @useDynLib smoothLRC, .registration = TRUE
 #' @importFrom Rcpp evalCpp
 #' @importFrom SummarizedExperiment assayNames
 ## usethis namespace: end

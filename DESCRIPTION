@@ -8,14 +8,14 @@ Description: Smooth low-rank clustering (smoothLRC) provides tools for clusterin
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.1.2
+RoxygenNote: 7.2.0
 NeedsCompilation: yes
 SystemRequirements: C++11
 Depends:
-    R (>= 4.0.0),
-    SingleCellExperiment
+    R (>= 4.0.0)
 Imports:
     Rcpp,
+    mclust,
     stats,
     SummarizedExperiment,
     Matrix,
@@ -27,3 +27,4 @@ LinkingTo:
     RcppArmadillo,
     RcppProgress
 BugReports: https://github.com/alexanderjwhite/smoothLRC
+URL: https://alexanderjwhite.github.io/smoothLRC/

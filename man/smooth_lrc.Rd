@@ -25,3 +25,14 @@ SummarizedExperiment object with u, v and cluster labels.
 \description{
 smoothLRC
 }
+\examples{
+
+sce <- example_sce()
+lambda <- 5
+k <- 10
+n_clust <- 5
+epsilon <- 1e-3
+maxiter <- 5
+smooth_lrc(sce, lambda, k, n_clust, epsilon, maxiter)
+
+}

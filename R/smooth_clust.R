@@ -4,12 +4,11 @@
 #'
 #' @param v matrix; right singular vectors
 #'
-#' @importFrom mclust Mclust
+#' @importFrom mclust Mclust mclustBIC
 #'
 #' @return vector of cluster labels
 #' @export
 #'
-#' @examples
 smooth_clust <- function(v, n_clust){
   Mclust(v, G = n_clust, modelNames = "EEE")$classification
 }

@@ -6,7 +6,8 @@
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of smoothLRC is to …
+Smooth Low-Rank Clustering (smoothLRC) provides tools to analyze and
+cluster spatial transcriptomics data.
 
 ## Installation
 

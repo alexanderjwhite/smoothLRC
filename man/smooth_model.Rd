@@ -4,9 +4,11 @@
 \alias{smooth_model}
 \title{smoothLRC algorithm}
 \usage{
-smooth_model(x, u_init, v_init, w, index, lambda, k, epsilon, maxiter)
+smooth_model(x, u_init, v_init, w, index, lambda, epsilon, maxiter)
 }
 \arguments{
+\item{x}{sparse matrix; assay matrix}
+
 \item{u_init}{matrix; u initialization matrix}
 
 \item{v_init}{matrix; v initialization matrix}
@@ -16,8 +18,6 @@ smooth_model(x, u_init, v_init, w, index, lambda, k, epsilon, maxiter)
 \item{index}{w indicies.}
 
 \item{lambda}{positive numeric; penalization parameter.}
-
-\item{k}{integer; indicates desired rank of singular value decomposition.}
 
 \item{epsilon}{positive numeric; convergence criterion.}
 

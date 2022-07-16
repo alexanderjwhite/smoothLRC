@@ -13,7 +13,6 @@
 #' @return list of objects for smooth_model function.
 #' @export
 #'
-#' @examples
 smooth_init <- function(x, coords, k, knn = 6){
 
   sp_svd <- sparsesvd::sparsesvd(log(x+1),rank = k)
@@ -26,6 +25,6 @@ smooth_init <- function(x, coords, k, knn = 6){
   w <- Matrix::sparseMatrix(i = rep(1:nrow(coords), each = knn), j = neighbours, x = 1, dims = c(nrow(coords), nrow(coords)))
   w <- methods::as(w, "dgCMatrix")
 
-  return(list(x = sp_svd, u0 = u0, v0 = v0, w = w, index = index))
+  return(list(u0 = u0, v0 = v0, w = w, index = index))
 
 }
