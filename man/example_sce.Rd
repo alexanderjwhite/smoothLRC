@@ -29,3 +29,8 @@ SummarizedExperiment object
 \description{
 Load Example sce dataset
 }
+\examples{
+
+example_sce()
+
+}

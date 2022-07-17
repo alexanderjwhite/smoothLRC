@@ -29,3 +29,16 @@ SummarizedExperiment object with u, v and cluster labels.
 \description{
 smoothLRC algorithm
 }
+\examples{
+
+sce <- example_sce()
+x <- SummarizedExperiment::assay(sce)
+coords <- SummarizedExperiment::colData(sce)[, c("col", "row")]
+k <- 10
+init <- smooth_init(x, coords, k)
+lambda <- 1
+epsilon <- 1e-3
+maxiter <- 5
+smooth_model(x, init$u0, init$v0, init$w, init$index, lambda, epsilon, maxiter)
+
+}

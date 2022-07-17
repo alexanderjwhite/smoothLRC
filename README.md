@@ -1,7 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# smoothLRC <img src="./inst/logo/logo.png" align="right" width="25%"/>
+# smoothLRC <img src="man/figures/logo.png" align="right" width="25%"/>
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -18,3 +18,8 @@ You can install the development version of smoothLRC from
 # install.packages("devtools")
 devtools::install_github("alexanderjwhite/smoothLRC")
 ```
+
+## Articles
+
+Please visit the [smoothLRC documentation
+website](https://alexanderjwhite.github.io/smoothLRC/) for details.

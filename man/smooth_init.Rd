@@ -21,3 +21,12 @@ list of objects for smooth_model function.
 \description{
 Initialization for smoothLRC
 }
+\examples{
+
+sce <- example_sce()
+x <- SummarizedExperiment::assay(sce)
+coords <- SummarizedExperiment::colData(sce)[, c("col", "row")]
+k <- 10
+smooth_init(x, coords, k)
+
+}

@@ -41,7 +41,7 @@ smooth_lrc <- function(input, lambda, k, n_clust, epsilon = 1e-3, maxiter = 1e3)
   clust <- smooth_clust(model$v, n_clust)
 
   # Attach components and return
-  input@colData$smooth_cluster <- unname(clust)
+  input@colData$smooth_cluster <- as.factor(unname(clust))
 
   input@metadata$smooth_u <- model$u
   input@metadata$smooth_v <- model$v

@@ -1,18 +1,25 @@
 Package: smoothLRC
-Title: What the Package Does (One Line, Title Case)
+Title: Tools For Clustering Spatial Transcriptomics Data
 Version: 0.99.0
 Authors@R: c(
-    person(given = "Alex", family = "White", role = c("aut", "cre"), email = "whitealj@iu.edu"),
+    person(given = "Alexander", family = "White", role = c("aut", "cre"), email = "whitealj@iu.edu"),
     person(given = "Sha", family = "Cao", role = c("aut"), email = "shacao@iu.edu"))
 Description: Smooth low-rank clustering (smoothLRC) provides tools for clustering spatial transcriptomics data.
+  smoothLRC presents a regularized maximum likelihood estimator to approximate the noisy ob-
+  served expression matrix to both incorporate spatial information and address expression
+  dropout. This approximation under the Poisson distribution is both low-rank and spatially
+  smooth. Furthermore, smoothLRC enables spatial clustering by modeling a low-dimensional
+  representation of the count-based gene expression matrix. Thus, our approach encourages
+  neighboring cells to belong to the same cluster via penalized matrix decomposition.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.0
 NeedsCompilation: yes
 SystemRequirements: C++11
+VignetteBuilder: knitr
 Depends:
-    R (>= 4.0.0)
+    R (>= 4.1.0)
 Imports:
     Rcpp,
     mclust,
@@ -22,9 +29,26 @@ Imports:
     methods,
     sparsesvd,
     FNN
+Suggests:
+    rmarkdown,
+    knitr,
+    spatialLIBD,
+    ggplot2,
+    dplyr,
+    testthat (>= 3.0.0)
 LinkingTo: 
     Rcpp,
     RcppArmadillo,
     RcppProgress
+biocViews:
+    Software,
+    Clustering,
+    Transcriptomics,
+    Spatial,
+    GeneExpression,
+    SingleCell,
+    ImmunoOncology,
+    DataImport
 BugReports: https://github.com/alexanderjwhite/smoothLRC
 URL: https://alexanderjwhite.github.io/smoothLRC/
+Config/testthat/edition: 3
