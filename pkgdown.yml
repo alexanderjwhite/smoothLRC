@@ -1,0 +1,10 @@
+pandoc: 2.14.0.3
+pkgdown: 2.0.6
+pkgdown_sha: ~
+articles:
+  smoothLRC: smoothLRC.html
+last_built: 2022-07-18T11:37Z
+urls:
+  reference: https://alexanderjwhite.github.io/smoothLRC/reference
+  article: https://alexanderjwhite.github.io/smoothLRC/articles
+
