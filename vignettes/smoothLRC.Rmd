@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 ## Setup
 
-```{r Setup}
+```{r Setup, collapse=TRUE}
 library(smoothLRC)
 library(ggplot2)
 library(dplyr)
@@ -58,31 +58,33 @@ col_data <- colData(sce)[,c("row","col","smooth_cluster")] %>%
 col_data %>%
   ggplot(aes(x = col, y = -row, color = smooth_cluster)) +
   geom_point(size = 1.5) +
-  ggtitle("smoothLRC (20 iteration)") +
+  ggtitle("smoothLRC (5 iterations)") +
   scale_color_viridis_d() +
   theme(panel.grid = element_blank(),
         axis.title = element_blank(),
         axis.text = element_blank(),
         axis.ticks = element_blank(),
+        legend.title=element_blank(),
         panel.background = element_blank())
 
 
 col_data %>%
   ggplot(aes(x = col, y = -row, fill = smooth_cluster_1000, color = smooth_cluster_1000)) +
   geom_point(size = 1.5) +
-  ggtitle("smoothLRC (1000 iteration)") +
+  ggtitle("smoothLRC (1000 iterations)") +
   scale_color_viridis_d() +
   theme(panel.grid = element_blank(),
         axis.title = element_blank(),
         axis.text = element_blank(),
         axis.ticks = element_blank(),
+        legend.title=element_blank(),
         panel.background = element_blank())
 
 ```
 
 ## Reproducibility
 
-```{r Reproducibility}
+```{r Reproducibility, collapse=TRUE}
 sessionInfo()
 ```
 
