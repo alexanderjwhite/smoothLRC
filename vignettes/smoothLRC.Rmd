@@ -23,6 +23,7 @@ library(smoothLRC)
 library(ggplot2)
 library(dplyr)
 library(SummarizedExperiment)
+set.seed(1)
 ```
 
 ## Load Data
