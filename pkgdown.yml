@@ -3,7 +3,7 @@ pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   smoothLRC: smoothLRC.html
-last_built: 2022-07-19T15:29Z
+last_built: 2022-07-23T11:25Z
 urls:
   reference: https://alexanderjwhite.github.io/smoothLRC/reference
   article: https://alexanderjwhite.github.io/smoothLRC/articles
