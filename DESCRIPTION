@@ -2,12 +2,12 @@ Package: smoothLRC
 Title: Tools For Clustering Spatial Transcriptomics Data Based On Low Rank Smoothing.
 Version: 0.99.0
 Authors@R: c(
-    person(given = "Alexander", family = "White", role = c("aut", "cre"), email = "whitealj@iu.edu"),
-    person(given = "Sha", family = "Cao", role = c("aut"), email = "shacao@iu.edu"),
+    person(given = "Alexander", family = "White", role = c("aut", "cre"), email = "whitealj@iu.edu", comment = c(ORCID = "0000-0002-9117-1475")),
+    person(given = "Sha", family = "Cao", role = c("aut"), email = "shacao@iu.edu", comment = c(ORCID = "0000-0002-8645-848X")),
     person(given = "Pengtao", family = "Dang", role = c("ctb"), email = "pdang@iu.edu"),
     person(given = "Changlin", family = "Wan", role = c("ctb"), email = "wanc@iu.edu"),
     person(given = "Arnu", family = "Zhang", role = c("ctb"), email = "anru.zhang@duke.edu"),
-    person(given = "Chi", family = "Zhang", role = c("ctb"), email = "czhang87@iu.edu"))
+    person(given = "Chi", family = "Zhang", role = c("ctb"), email = "czhang87@iu.edu", comment = c(ORCID = "0000-0001-9553-0925")))
 Description: Smooth low-rank clustering (smoothLRC) provides tools for clustering spatial transcriptomics data.
   smoothLRC presents a regularized maximum likelihood estimator to approximate the noisy observed expression matrix to both incorporate spatial information and address expression
   dropout. This approximation under the Poisson distribution is both low-rank and spatially

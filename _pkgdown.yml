@@ -2,3 +2,10 @@ url: https://alexanderjwhite.github.io/smoothLRC/
 template:
   bootstrap: 5
 
+authors:
+  Alexander White:
+    href: https://alexanderjwhite.github.io/
+  Changlin Wan:
+    href: https://clwan.github.io/
+
+
