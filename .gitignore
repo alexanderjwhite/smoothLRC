@@ -23,9 +23,6 @@ data-raw/
 /data/
 data/
 
-# RStudio files
-.Rproj.user/
-
 # produced vignettes
 vignettes/*.html
 vignettes/*.pdf
@@ -50,7 +47,6 @@ vignettes/*.png
 *.dll
 
 .RDataTmp
-*.Rproj
 inst/doc
 
 .DS_Store
@@ -62,3 +58,4 @@ docs/
 *.nb.html
 *.rds
 docs
+.Rproj.user
