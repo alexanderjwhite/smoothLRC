@@ -31,12 +31,12 @@ Imports:
     Matrix,
     methods,
     sparsesvd,
-    FNN
+    FNN,
+    ggplot2
 Suggests:
     rmarkdown,
     knitr,
     spatialLIBD,
-    ggplot2,
     dplyr,
     testthat (>= 3.0.0)
 LinkingTo: 
