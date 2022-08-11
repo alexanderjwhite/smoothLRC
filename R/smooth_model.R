@@ -26,6 +26,6 @@ smooth_model <- function(x, u_init, v_init, w, index, lambda, epsilon, maxiter){
 
   model <- fct_c_optimize(x, u_init, v_init, w, index, lambda, epsilon, maxiter)
 
-  return(list(u = model$u, v = model$v))
+  return(list(u = model$u, v = model$v, penal_lik = model$lik_penal))
 
 }
