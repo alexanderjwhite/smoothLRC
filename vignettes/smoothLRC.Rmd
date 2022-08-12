@@ -1,7 +1,5 @@
 ---
 title: "Introduction to smoothLRC"
-author: "Alexander White, Pengtao Dang, Changlin Wan, Anru Zhang, Chi Zhang, Sha Cao"
-date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Introduction to smoothLRC}
@@ -89,6 +87,7 @@ Finally, we can reexamine our HVG using the smoothed results from the model.
 ```{r Smoothed Expression, fig.height=5, fig.width=5.5, message=FALSE, warning=FALSE}
 sce %>% 
   spatial_plot(feature_name = hvg, type = "smooth")
+
 ```
 
 

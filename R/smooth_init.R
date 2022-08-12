@@ -1,4 +1,4 @@
-#' Initialization for smoothLRC
+#' Initialization objects for smoothLRC
 #'
 #' @inheritParams smooth_lrc
 #' @param x matrix; count assay.

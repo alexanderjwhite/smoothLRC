@@ -1,4 +1,4 @@
-#' smoothLRC algorithm
+#' Main smoothLRC algorithm
 #'
 #' @inheritParams smooth_lrc
 #' @param x sparse matrix; assay matrix

@@ -1,4 +1,4 @@
-#' Clustering of Right Singular Vectors
+#' Cluster the right singular vectors from model output
 #'
 #' @inheritParams smooth_lrc
 #'

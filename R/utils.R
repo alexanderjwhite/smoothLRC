@@ -1,4 +1,4 @@
-#' Load Example sce dataset
+#' Create an example SummarizedExperiment object with spatial data
 #'
 #' @param n_row integer; number of simulated spatial pixel rows
 #' @param n_col integer; number of simulated spatial pixel columns

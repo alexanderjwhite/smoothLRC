@@ -1,4 +1,4 @@
-#' smoothLRC
+#' Cluster spatial transcriptomics data
 #'
 #' @param input SummarizedExperiment object containing counts assay and row/col coordinates.
 #' @param lambda positive numeric; penalization parameter.
