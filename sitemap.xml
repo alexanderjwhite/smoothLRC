@@ -34,6 +34,9 @@
     <loc>https://alexanderjwhite.github.io/smoothLRC/reference/smooth_clust.html</loc>
   </url>
   <url>
+    <loc>https://alexanderjwhite.github.io/smoothLRC/reference/smooth_cv.html</loc>
+  </url>
+  <url>
     <loc>https://alexanderjwhite.github.io/smoothLRC/reference/smooth_init.html</loc>
   </url>
   <url>
@@ -41,5 +44,8 @@
   </url>
   <url>
     <loc>https://alexanderjwhite.github.io/smoothLRC/reference/smooth_model.html</loc>
+  </url>
+  <url>
+    <loc>https://alexanderjwhite.github.io/smoothLRC/reference/spatial_plot.html</loc>
   </url>
 </urlset>

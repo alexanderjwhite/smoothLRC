@@ -100,15 +100,13 @@
 <span class="r-in"><span><span class="va">epsilon</span> <span class="op">&lt;-</span> <span class="fl">1e-3</span></span></span>
 <span class="r-in"><span><span class="va">maxiter</span> <span class="op">&lt;-</span> <span class="fl">5</span></span></span>
 <span class="r-in"><span><span class="fu">smooth_lrc</span><span class="op">(</span><span class="va">sce</span>, <span class="va">lambda</span>, <span class="va">k</span>, <span class="va">n_clust</span>, <span class="va">epsilon</span>, <span class="va">maxiter</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> dimnames(.) &lt;- NULL:  translated to </span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> dimnames(.) &lt;- list(NULL,NULL)  &lt;==&gt;  unname(.)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Initializing components..."</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Running smoothLRC..."</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 1 | convergence: 0.102292 | 0.0350703 | 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 2 | convergence: 0.08897 | 0.0333577 | 0.00450939</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 3 | convergence: 0.0810041 | 0.0330843 | 0.0042925</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 4 | convergence: 0.07636 | 0.0333741 | 0.00421182</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 5 | convergence: 0.0743766 | 0.0339523 | 0.00426326</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 1 | convergence: 0.104958 | 0.0328583 | 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 2 | convergence: 0.0926339 | 0.0313183 | 0.0045385</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 3 | convergence: 0.0847284 | 0.0316083 | 0.00431309</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 4 | convergence: 0.079539 | 0.0322494 | 0.00426252</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 5 | convergence: 0.078299 | 0.0330437 | 0.00437174</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> [1] "Clustering right singular vectors..."</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> fitting ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   |                                                                              |                                                                      |   0%  |                                                                              |===================================                                   |  50%  |                                                                              |======================================================================| 100%</span>
@@ -116,10 +114,10 @@
 <span class="r-out co"><span class="r-pr">#&gt;</span> class: SummarizedExperiment </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> dim: 1000 100 </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> metadata(2): smooth_u smooth_v</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> assays(1): counts</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> rownames: NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> assays(2): counts logcounts</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> rownames(1000): Feature 1 Feature 2 ... Feature 999 Feature 1000</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> rowData names(0):</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> colnames: NULL</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> colnames(100): Pixel 1 Pixel 2 ... Pixel 99 Pixel 100</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> colData names(3): row col smooth_cluster</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
