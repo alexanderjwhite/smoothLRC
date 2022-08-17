@@ -3,7 +3,9 @@ pkgdown: 2.0.6
 pkgdown_sha: ~
 articles:
   smoothLRC: smoothLRC.html
-last_built: 2022-08-12T13:06Z
+  Seurat Integration: Seurat Integration.html
+  Parameter Selection: Parameter Selection.html
+last_built: 2022-08-17T20:01Z
 urls:
   reference: https://alexanderjwhite.github.io/smoothLRC/reference
   article: https://alexanderjwhite.github.io/smoothLRC/articles

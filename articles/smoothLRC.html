@@ -48,6 +48,13 @@
 <li class="nav-item">
   <a class="nav-link" href="../reference/index.html">Reference</a>
 </li>
+<li class="nav-item dropdown">
+  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
+  <div class="dropdown-menu" aria-labelledby="dropdown-articles">
+    <a class="dropdown-item" href="../articles/Seurat%20Integration.html">Seurat Integration</a>
+    <a class="dropdown-item" href="../articles/Parameter%20Selection.html">Parameter Selection</a>
+  </div>
+</li>
 <li class="nav-item">
   <a class="nav-link" href="../news/index.html">Changelog</a>
 </li>
@@ -91,9 +98,9 @@
 <p>smoothLRC employs the <a href="https://bioconductor.org/packages/release/bioc/html/SummarizedExperiment.html" class="external-link">SummarizedExperiment</a> framework for spatial transcriptomics data. In this example, we will cluster a dorsolateral prefrontal cortex (DLPFC) collected and annotated by <a href="https://www.biorxiv.org/content/10.1101/2020.02.28.969931v1" class="external-link">Maynard et al. (2020)</a>.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://alexanderjwhite.github.io/smoothLRC/">smoothLRC</a></span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://bioconductor.org/packages/SummarizedExperiment" class="external-link">SummarizedExperiment</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://ggplot2.tidyverse.org" class="external-link">ggplot2</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://dplyr.tidyverse.org" class="external-link">dplyr</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://bioconductor.org/packages/SummarizedExperiment" class="external-link">SummarizedExperiment</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -114,7 +121,7 @@
 <code class="sourceCode R"><span><span class="va">hvg</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">rownames</a></span><span class="op">(</span><span class="va">sce</span><span class="op">)</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.min.html" class="external-link">which.max</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/apply.html" class="external-link">apply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/SummarizedExperiment/man/SummarizedExperiment-class.html" class="external-link">assay</a></span><span class="op">(</span><span class="va">sce</span><span class="op">)</span>, <span class="fl">1</span>, <span class="va">var</span><span class="op">)</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="va">sce</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/spatial_plot.html">spatial_plot</a></span><span class="op">(</span>feature_name <span class="op">=</span> <span class="va">hvg</span><span class="op">)</span></span></code></pre></div>
-<p><img src="smoothLRC_files/figure-html/Raw%20Expression-1.png" width="528"></p>
+<p><img src="smoothLRC_files/figure-html/Expression-1.png" width="528"></p>
 </div>
 <div class="section level2">
 <h2 id="clustering">Clustering<a class="anchor" aria-label="anchor" href="#clustering"></a>
@@ -143,24 +150,24 @@
 <span><span class="va">sce</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/spatial_plot.html">spatial_plot</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"cluster"</span><span class="op">)</span> <span class="op">+</span> </span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">"smoothLRC (5 iterations)"</span><span class="op">)</span> </span></code></pre></div>
-<p><img src="smoothLRC_files/figure-html/Visualize-1.png" width="528"></p>
+<p><img src="smoothLRC_files/figure-html/Cluster%20Visualize-1.png" width="528"></p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">sce</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/spatial_plot.html">spatial_plot</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"cluster"</span>, labels <span class="op">=</span> <span class="va">clust_1000</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">"smoothLRC (1000 iterations)"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="smoothLRC_files/figure-html/Visualize-2.png" width="528"></p>
+<p><img src="smoothLRC_files/figure-html/Cluster%20Visualize-2.png" width="528"></p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">sce</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/spatial_plot.html">spatial_plot</a></span><span class="op">(</span>type <span class="op">=</span> <span class="st">"cluster"</span>, labels <span class="op">=</span> <span class="va">manual_labels</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html" class="external-link">ggtitle</a></span><span class="op">(</span><span class="st">"Manual Annotation"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="smoothLRC_files/figure-html/Visualize-3.png" width="528"></p>
+<p><img src="smoothLRC_files/figure-html/Cluster%20Visualize-3.png" width="528"></p>
 <p>Finally, we can reexamine our HVG using the smoothed results from the model.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sce</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> </span>
 <span>  <span class="fu"><a href="../reference/spatial_plot.html">spatial_plot</a></span><span class="op">(</span>feature_name <span class="op">=</span> <span class="va">hvg</span>, type <span class="op">=</span> <span class="st">"smooth"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="smoothLRC_files/figure-html/Smoothed%20Expression-1.png" width="528"></p>
+<p><img src="smoothLRC_files/figure-html/Smooth%20Expression-1.png" width="528"></p>
 <p>Reproducibility</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html" class="external-link">sessionInfo</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -182,12 +189,12 @@
 <span><span class="co">#&gt; [8] base     </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; other attached packages:</span></span>
-<span><span class="co">#&gt;  [1] SummarizedExperiment_1.24.0 Biobase_2.54.0             </span></span>
-<span><span class="co">#&gt;  [3] GenomicRanges_1.46.1        GenomeInfoDb_1.30.1        </span></span>
-<span><span class="co">#&gt;  [5] IRanges_2.28.0              S4Vectors_0.32.4           </span></span>
-<span><span class="co">#&gt;  [7] BiocGenerics_0.40.0         MatrixGenerics_1.6.0       </span></span>
-<span><span class="co">#&gt;  [9] matrixStats_0.62.0          dplyr_1.0.9                </span></span>
-<span><span class="co">#&gt; [11] ggplot2_3.3.6               smoothLRC_0.99.0           </span></span>
+<span><span class="co">#&gt;  [1] dplyr_1.0.9                 ggplot2_3.3.6              </span></span>
+<span><span class="co">#&gt;  [3] SummarizedExperiment_1.24.0 Biobase_2.54.0             </span></span>
+<span><span class="co">#&gt;  [5] GenomicRanges_1.46.1        GenomeInfoDb_1.30.1        </span></span>
+<span><span class="co">#&gt;  [7] IRanges_2.28.0              S4Vectors_0.32.4           </span></span>
+<span><span class="co">#&gt;  [9] BiocGenerics_0.40.0         MatrixGenerics_1.6.0       </span></span>
+<span><span class="co">#&gt; [11] matrixStats_0.62.0          smoothLRC_0.99.0           </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; loaded via a namespace (and not attached):</span></span>
 <span><span class="co">#&gt;   [1] utf8_1.2.2                    R.utils_2.12.0               </span></span>
