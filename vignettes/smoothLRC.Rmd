@@ -3,8 +3,10 @@ title: "Introduction to smoothLRC"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Introduction to smoothLRC}
-  %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r, include = FALSE}
@@ -22,9 +24,7 @@ smoothLRC employs the [SummarizedExperiment](https://bioconductor.org/packages/r
 
 ```{r Setup, message=FALSE, warning=FALSE, collapse=TRUE}
 library(smoothLRC)
-library(ggplot2)
 library(dplyr)
-library(SummarizedExperiment)
 set.seed(1)
 ```
 
@@ -41,14 +41,13 @@ sce <- sce[, sce$sample_name == sample]
 
 ## Expression Plot
 
-We'll find a highly variable gene (HVG) for this sample and explore its expression in the spatial context.
+We’ll find a highly variable gene (HVG) for this sample and explore its expression in the spatial context.
 
-```{r Raw Expression, fig.height=5, fig.width=5.5, message=FALSE, warning=FALSE}
+```{r Expression, fig.height=5, fig.width=5.5, message=FALSE, warning=FALSE}
 hvg <- rownames(sce)[which.max(apply(assay(sce), 1, var))]
 sce %>% 
   spatial_plot(feature_name = hvg)
 ```
-
 
 ## Clustering
 
@@ -63,7 +62,7 @@ sce <- smooth_lrc(sce, lambda = 5, k = 30, n_clust = 5, maxiter = 5)
 
 We'll visualize the results of both the model and a pre-computed model with a larger number of iterations and compare them with the manual annotations.
 
-```{r Visualize, fig.height=5, fig.width=5.5, message=FALSE, warning=FALSE}
+```{r Cluster Visualize, fig.height=5, fig.width=5.5, message=FALSE, warning=FALSE}
 clust_1000 <- read.csv("151671.csv", colClasses = "factor")$smooth_cluster_1000
 manual_labels <- colData(sce)$layer_guess_reordered
 
@@ -84,7 +83,7 @@ sce %>%
 
 Finally, we can reexamine our HVG using the smoothed results from the model.
 
-```{r Smoothed Expression, fig.height=5, fig.width=5.5, message=FALSE, warning=FALSE}
+```{r Smooth Expression, fig.height=5, fig.width=5.5, message=FALSE, warning=FALSE}
 sce %>% 
   spatial_plot(feature_name = hvg, type = "smooth")
 

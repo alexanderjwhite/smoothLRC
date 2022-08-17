@@ -1,0 +1,89 @@
+---
+title: "Parameter Selection"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Parameter Selection}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+## Setup
+
+The smoothLRC method uses a smoothing parameter ($lambda$) and a rank parameter ($k$) to produce results. This article demonstrates the selection of these parameters.
+
+```{r Setup, message=FALSE, warning=FALSE, collapse=TRUE}
+library(smoothLRC)
+library(dplyr)
+set.seed(1)
+```
+
+## Load Data
+
+Using the [spatialLIBD](http://spatial.libd.org/spatialLIBD/) package, we'll load sample 151671 from the DLPFC data. 
+
+```{r Load Data, message=FALSE, warning=FALSE}
+sample <- "151671"
+
+sce <- spatialLIBD::fetch_data(type = "sce")
+sce <- sce[, sce$sample_name == sample]
+```
+
+## Parameter Grid
+
+Here we'll consider $lambda=(5, 10, 15)$ and $k=(10, 20)$. Further, we'll use 100 pixels as a test size.
+
+```{r Parameters, message=FALSE, warning=FALSE}
+lambdas <- c(5, 10, 15)
+ks <- c(10, 20)
+parameter_grid <- expand.grid(lambda = lambdas, k = ks)
+test_size <- 100
+```
+
+
+## Cross-Validation
+
+Next, we'll use cross-validation to select the optimal parameter values.
+
+```{r smoothLRC, message=FALSE, warning=FALSE}
+metrics <- NULL
+for(combo in 1:nrow(parameter_grid)){
+  print(parameter_grid[combo,])
+  combination <- smooth_cv(sce, lambda = parameter_grid[combo,"lambda"], k = parameter_grid[combo,"k"], test_size, maxiter = 5)
+  metrics <- rbind(metrics, tibble(lambda = parameter_grid[combo,"lambda"], 
+                                   k = parameter_grid[combo,"k"],
+                                   penal_lik = combination$penal_like,
+                                   cv_like = combination$cv_like)
+                   )
+}
+
+metrics %>% 
+  ggplot(aes(x = lambda, y = cv_like)) +
+  geom_point() +
+  geom_line() +
+  facet_wrap(~k, scales = "free") +
+  ylab("CV Likelihood")
+
+metrics %>% 
+  group_by(k) %>%
+  slice_max(order_by = cv_like, n = 1) %>%
+  ungroup() %>%
+  mutate(selected = ifelse(penal_lik == max(penal_lik), "Yes", "No")) %>%
+  ggplot(aes(x = k, y = penal_lik, label = lambda)) +
+  geom_point() +
+  geom_line() +
+  geom_label(aes(color = selected)) +
+  ylab("Penalized Likelihood")
+
+```
+
+
+We can see that using the recommend procedure, the selected combination is ($\lambda=15$, $k=20$). In practice, we recommend running for a much larger number of iterations (e.g. 1,000) and looking over a larger parameter space. 

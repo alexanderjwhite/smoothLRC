@@ -2,6 +2,7 @@
 #'
 #' @inheritParams smooth_lrc
 #' @param test_size The number of pixels to use in the test set.
+#' @param seed A random seed to produce consistent pixel samples across parameter values for cross-validation.
 #'
 #' @return A list containing the penalized likelihood from the model and the cross-validated likelihood from the test set.
 #' @export
@@ -9,7 +10,10 @@
 #' @examples
 #' sce <- example_sce()
 #' smooth_cv(sce, 1, 10, 100, maxiter = 10)
-smooth_cv <- function(input, lambda, k, test_size, epsilon = 1e-3, maxiter = 1e3){
+smooth_cv <- function(input, lambda, k, test_size, seed = 1, epsilon = 1e-3, maxiter = 1e3){
+
+  # Set random seed for consistency across parameters
+  set.seed(seed)
 
   # Get assay/coordinates from SummarizedExperiment object
   x <- assay(input)
