@@ -24,6 +24,8 @@ smoothLRC employs the [SummarizedExperiment](https://bioconductor.org/packages/r
 
 ```{r Setup, message=FALSE, warning=FALSE, collapse=TRUE}
 library(smoothLRC)
+library(SummarizedExperiment)
+library(ggplot2)
 library(dplyr)
 set.seed(1)
 ```

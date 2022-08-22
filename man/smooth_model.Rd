@@ -2,7 +2,7 @@
 % Please edit documentation in R/smooth_model.R
 \name{smooth_model}
 \alias{smooth_model}
-\title{smoothLRC algorithm}
+\title{Main smoothLRC algorithm}
 \usage{
 smooth_model(x, u_init, v_init, w, index, lambda, epsilon, maxiter)
 }
@@ -27,7 +27,7 @@ smooth_model(x, u_init, v_init, w, index, lambda, epsilon, maxiter)
 SummarizedExperiment object with u, v and cluster labels.
 }
 \description{
-smoothLRC algorithm
+Main smoothLRC algorithm
 }
 \examples{
 

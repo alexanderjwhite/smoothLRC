@@ -2,7 +2,7 @@
 % Please edit documentation in R/smooth_lrc.R
 \name{smooth_lrc}
 \alias{smooth_lrc}
-\title{smoothLRC}
+\title{Cluster spatial transcriptomics data}
 \usage{
 smooth_lrc(input, lambda, k, n_clust, epsilon = 0.001, maxiter = 1000)
 }
@@ -23,7 +23,7 @@ smooth_lrc(input, lambda, k, n_clust, epsilon = 0.001, maxiter = 1000)
 SummarizedExperiment object with u, v and cluster labels.
 }
 \description{
-smoothLRC
+Cluster spatial transcriptomics data
 }
 \examples{
 

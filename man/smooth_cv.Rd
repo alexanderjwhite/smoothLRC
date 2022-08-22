@@ -4,7 +4,15 @@
 \alias{smooth_cv}
 \title{Parameter Selection via Cross-Validation}
 \usage{
-smooth_cv(input, lambda, k, test_size, epsilon = 0.001, maxiter = 1000)
+smooth_cv(
+  input,
+  lambda,
+  k,
+  test_size,
+  seed = 1,
+  epsilon = 0.001,
+  maxiter = 1000
+)
 }
 \arguments{
 \item{input}{SummarizedExperiment object containing counts assay and row/col coordinates.}
@@ -14,6 +22,8 @@ smooth_cv(input, lambda, k, test_size, epsilon = 0.001, maxiter = 1000)
 \item{k}{integer; indicates desired rank of singular value decomposition.}
 
 \item{test_size}{The number of pixels to use in the test set.}
+
+\item{seed}{A random seed to produce consistent pixel samples across parameter values for cross-validation.}
 
 \item{epsilon}{positive numeric; convergence criterion.}
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/smooth_init.R
 \name{smooth_init}
 \alias{smooth_init}
-\title{Initialization for smoothLRC}
+\title{Initialization objects for smoothLRC}
 \usage{
 smooth_init(x, coords, k, knn = 6)
 }
@@ -19,7 +19,7 @@ smooth_init(x, coords, k, knn = 6)
 list of objects for smooth_model function.
 }
 \description{
-Initialization for smoothLRC
+Initialization objects for smoothLRC
 }
 \examples{
 

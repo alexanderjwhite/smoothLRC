@@ -2,7 +2,7 @@
 % Please edit documentation in R/utils.R
 \name{example_sce}
 \alias{example_sce}
-\title{Load Example sce dataset}
+\title{Create an example SummarizedExperiment object with spatial data}
 \usage{
 example_sce(
   n_row = 10,
@@ -27,7 +27,7 @@ example_sce(
 SummarizedExperiment object
 }
 \description{
-Load Example sce dataset
+Create an example SummarizedExperiment object with spatial data
 }
 \examples{
 

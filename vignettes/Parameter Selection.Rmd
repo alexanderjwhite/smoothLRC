@@ -18,10 +18,11 @@ knitr::opts_chunk$set(
 
 ## Setup
 
-The smoothLRC method uses a smoothing parameter ($lambda$) and a rank parameter ($k$) to produce results. This article demonstrates the selection of these parameters.
+The smoothLRC method uses a smoothing parameter ($/lambda$) and a rank parameter ($k$) to produce results. This article demonstrates the selection of these parameters.
 
 ```{r Setup, message=FALSE, warning=FALSE, collapse=TRUE}
 library(smoothLRC)
+library(ggplot2)
 library(dplyr)
 set.seed(1)
 ```
@@ -39,7 +40,7 @@ sce <- sce[, sce$sample_name == sample]
 
 ## Parameter Grid
 
-Here we'll consider $lambda=(5, 10, 15)$ and $k=(10, 20)$. Further, we'll use 100 pixels as a test size.
+Here we'll consider $/lambda=(5, 10, 15)$ and $k=(10, 20)$. Further, we'll use 100 pixels as a test size.
 
 ```{r Parameters, message=FALSE, warning=FALSE}
 lambdas <- c(5, 10, 15)
@@ -53,7 +54,7 @@ test_size <- 100
 
 Next, we'll use cross-validation to select the optimal parameter values.
 
-```{r smoothLRC, message=FALSE, warning=FALSE}
+```{r smoothLRC, fig.height=5, fig.width=5.5, message=FALSE, warning=FALSE}
 metrics <- NULL
 for(combo in 1:nrow(parameter_grid)){
   print(parameter_grid[combo,])
@@ -69,18 +70,18 @@ metrics %>%
   ggplot(aes(x = lambda, y = cv_like)) +
   geom_point() +
   geom_line() +
-  facet_wrap(~k, scales = "free") +
+  facet_wrap(~k) +
   ylab("CV Likelihood")
 
 metrics %>% 
   group_by(k) %>%
   slice_max(order_by = cv_like, n = 1) %>%
   ungroup() %>%
-  mutate(selected = ifelse(penal_lik == max(penal_lik), "Yes", "No")) %>%
+  mutate(Selected = ifelse(penal_lik == max(penal_lik), "Yes", "No")) %>%
   ggplot(aes(x = k, y = penal_lik, label = lambda)) +
   geom_point() +
   geom_line() +
-  geom_label(aes(color = selected)) +
+  geom_label(aes(color = Selected)) +
   ylab("Penalized Likelihood")
 
 ```

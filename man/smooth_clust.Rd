@@ -2,7 +2,7 @@
 % Please edit documentation in R/smooth_clust.R
 \name{smooth_clust}
 \alias{smooth_clust}
-\title{Clustering of Right Singular Vectors}
+\title{Cluster the right singular vectors from model output}
 \usage{
 smooth_clust(v, n_clust)
 }
@@ -15,7 +15,7 @@ smooth_clust(v, n_clust)
 vector of cluster labels
 }
 \description{
-Clustering of Right Singular Vectors
+Cluster the right singular vectors from model output
 }
 \examples{
 
