@@ -27,7 +27,6 @@
 <li class="nav-item dropdown">
   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown-articles">Articles</a>
   <div class="dropdown-menu" aria-labelledby="dropdown-articles">
-    <a class="dropdown-item" href="../articles/Seurat%20Integration.html">Seurat Integration</a>
     <a class="dropdown-item" href="../articles/Parameter%20Selection.html">Parameter Selection</a>
   </div>
 </li>
@@ -93,18 +92,18 @@
 <span class="r-in"><span><span class="va">epsilon</span> <span class="op">&lt;-</span> <span class="fl">1e-3</span></span></span>
 <span class="r-in"><span><span class="va">maxiter</span> <span class="op">&lt;-</span> <span class="fl">5</span></span></span>
 <span class="r-in"><span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="smooth_model.html">smooth_model</a></span><span class="op">(</span><span class="va">x</span>, <span class="va">init</span><span class="op">$</span><span class="va">u0</span>, <span class="va">init</span><span class="op">$</span><span class="va">v0</span>, <span class="va">init</span><span class="op">$</span><span class="va">w</span>, <span class="va">init</span><span class="op">$</span><span class="va">index</span>, <span class="va">lambda</span>, <span class="va">epsilon</span>, <span class="va">maxiter</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 1 | convergence: 0.0978677 | 0.0367396 | 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 2 | convergence: 0.0733829 | 0.0299329 | 0.00495608</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 3 | convergence: 0.0674642 | 0.0329445 | 0.00497391</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 4 | convergence: 0.0660687 | 0.0349695 | 0.00512346</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 5 | convergence: 0.0661369 | 0.0358345 | 0.00542723</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 1 | convergence: 0.103343 | 0.0353524 | 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 2 | convergence: 0.0827336 | 0.0308956 | 0.00515834</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 3 | convergence: 0.078883 | 0.0366244 | 0.00545559</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 4 | convergence: 0.0793429 | 0.0396822 | 0.00597432</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> iteration: 5 | convergence: 0.0815055 | 0.0408646 | 0.00670067</span>
 <span class="r-in"><span><span class="va">n_clust</span> <span class="op">&lt;-</span> <span class="fl">3</span></span></span>
 <span class="r-in"><span><span class="fu">smooth_clust</span><span class="op">(</span><span class="va">model</span><span class="op">$</span><span class="va">v</span>, <span class="va">n_clust</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> fitting ...</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   |                                                                              |                                                                      |   0%  |                                                                              |===================================                                   |  50%  |                                                                              |======================================================================| 100%</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>   [1] 3 2 3 3 1 3 3 3 1 2 3 3 1 3 3 1 1 3 3 3 1 3 1 3 3 3 3 2 2 1 1 1 3 3 3 2 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [38] 1 2 3 3 3 1 3 2 3 2 3 3 3 3 3 3 3 3 1 3 1 3 2 2 3 1 3 1 1 1 1 3 2 3 3 3 1</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>  [75] 2 3 3 1 1 3 3 1 3 3 3 3 1 3 3 2 3 3 3 1 3 3 3 3 2 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [1] 2 2 2 1 3 2 2 3 2 3 2 2 2 2 1 2 2 2 2 1 1 2 1 1 2 2 2 2 2 2 2 2 2 2 1 3 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [38] 2 2 2 2 2 2 3 3 2 2 2 2 2 2 2 2 2 2 2 3 2 2 3 1 3 2 1 1 3 2 2 2 2 1 2 2 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [75] 1 3 3 2 2 2 1 2 2 1 2 1 3 2 3 3 2 2 3 1 2 3 2 2 2 2</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
