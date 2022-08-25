@@ -21,9 +21,23 @@ smooth_cv <- function(input, lambda, k, test_size, seed = 1, epsilon = 1e-3, max
 
   # Initialize with full input
   print("Initializing components...")
-  full_nn <- FNN::get.knn(coords, k = 6)
-  full_index <- full_nn$nn.index
-  full_dist <- full_nn$nn.dist
+  full_nn_pre <- FNN::get.knn(coords, k = 7)
+  full_index_pre <- full_nn_pre$nn.index
+  full_dist_pre <- full_nn_pre$nn.dist
+
+  full_index <- full_dist <- matrix(0, nrow = nrow(coords), ncol = 6)
+  for(i in 1:nrow(full_index_pre)){
+    nn_i <- full_index_pre[i,]
+    if(i %in% nn_i){
+      full_index[i,] <- full_index_pre[i,-which(nn_i == i)]
+      full_dist[i,] <- full_dist_pre[i,-which(nn_i == i)]
+    } else {
+      full_index[i,] <- full_index_pre[i,1:6]
+      full_dist[i,] <- full_dist_pre[i, 1:6]
+    }
+
+  }
+  full_dist[full_dist==0] <- 1e-3
 
   # Find non-neighboring pixels
   test_cols <- NULL

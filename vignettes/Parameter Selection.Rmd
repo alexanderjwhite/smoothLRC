@@ -18,7 +18,7 @@ knitr::opts_chunk$set(
 
 ## Setup
 
-The smoothLRC method uses a smoothing parameter ($/lambda$) and a rank parameter ($k$) to produce results. This article demonstrates the selection of these parameters.
+The smoothLRC method uses a smoothing parameter ($\lambda$) and a rank parameter ($k$) to produce results. This article demonstrates the selection of these parameters.
 
 ```{r Setup, message=FALSE, warning=FALSE, collapse=TRUE}
 library(smoothLRC)
@@ -40,7 +40,7 @@ sce <- sce[, sce$sample_name == sample]
 
 ## Parameter Grid
 
-Here we'll consider $/lambda=(5, 10, 15)$ and $k=(10, 20)$. Further, we'll use 100 pixels as a test size.
+Here we'll consider $\lambda=(5, 10, 15)$ and $k=(10, 20)$. Further, we'll use 100 pixels as a test size.
 
 ```{r Parameters, message=FALSE, warning=FALSE}
 lambdas <- c(5, 10, 15)
