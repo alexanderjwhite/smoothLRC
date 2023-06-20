@@ -2,7 +2,7 @@
 #'
 #' @inheritParams smooth_lrc
 #' @param x matrix; count assay.
-#' @param coords matrix; spatial coordinates.
+#' @param coords matrix; two columns of spatial coordinates.
 #' @param knn integer; nearest neighbors.
 #'
 #' @importFrom sparsesvd sparsesvd
